@@ -1,0 +1,73 @@
+/* Reset some default styles in browsers */
+body, select, input {
+    margin: 20px;
+    padding: 0px;
+    font-family: Roboto, sans-serif;
+}
+
+/* Container for the entire content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* Headings */
+h3 {
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Multiple select box */
+select[multiple] {
+    height: 200px;
+    margin: 20px;
+}
+
+/* Input fields */
+input[type=text] {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit button */
+input[type=submit] {
+    display: block; /* Add this */
+    margin: 10px left; /* Add this to center the button and give some space around it */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Messages */
+div.error {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Label */
+label {
+    display: block;
+    margin: 5px;
+}
+

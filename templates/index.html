@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Fases and Effects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Selecteer fases en effecten</h1>
+    <form action="/" method="post">
+        <label>Selecteer fases door met CTRL ingedrukt waardes te selecteren:</label>
+        <select name="fasen" multiple>
+            {% for fase in fases %}
+                <option value="{{ fase }}">{{ fase }}</option>
+            {% endfor %}
+        </select>
+        
+        <label>Selecteer effecten door met CTRL ingedrukt waardes te selecteren:</label>
+        <select name="effecten" multiple>
+            {% for effect in effects %}
+                <option value="{{ effect }}">{{ effect }}</option>
+            {% endfor %}
+        </select>
+        
+        <input type="submit" value="Toepassen">
+    </form>
+</body>
+</html>
+

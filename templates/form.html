@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combinations Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<h3>Vul de waardes hieronder in:</h3>
+
+<form method="post" action="/submit">
+    {% for fase in selected_fases %}
+        {% for effect in selected_effects %}
+            <label>{{ effect }} | {{ fase }}</label>
+            <input type="text" name="{{ fase }}-{{ effect }}">
+        {% endfor %}
+    {% endfor %}
+    <input type="submit" value="Toepassen">
+</form>
+
+</body>
+</html>
+
