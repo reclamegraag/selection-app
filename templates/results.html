@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Results</title>
+    <title>Ingevulde tabel</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
-<h3>Results:</h3>
+<h1>Ingevulde tabel</h1>
 
 <table>
-    <tr>
-        <th>Fase</th>
-        {% for effect in selected_effects %}
-            <th>{{ effect }}</th>
+    <thead>
+        <tr>
+            <th>Fase</th>
+            {% for effect in selected_effects %}
+                <th>{{ effect }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for fase, effects in results.items() %}
+            <tr>
+                <td>{{ fase }}</td>
+                {% for effect in selected_effects %}
+                    <td>{{ results[fase].get(effect, '') }}</td>
+                {% endfor %}
+            </tr>
         {% endfor %}
-    </tr>
-    {% for fase, effects in results.items() %}
-    <tr>
-        <td>{{ fase }}</td>
-        {% for effect in selected_effects %}
-            <td style="text-align: right;">
-                {{ effects.get(effect, '0')|format_number }}
-            </td>
-        {% endfor %}
-    </tr>
-    {% endfor %}
+    </tbody>
 </table>
 
 </body>
